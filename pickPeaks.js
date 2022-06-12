@@ -15,7 +15,14 @@ Also, beware of plateaus !!! [1, 2, 2, 2, 1] has a peak while [1, 2, 2, 2, 3] an
 Have fun!*/
 
 function pickPeaks(arr){
-        pos = [1,2,3,4]
-        peaks = [1,2,3,1]
-    //  return {pos:[],peaks:[]}
-  }
+
+        let position = [];
+        let peaks = [];
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){
+              position.push(i);
+              peaks.push(arr[i]);
+            }
+        }
+  return {pos:position,peaks:peaks}
+}
