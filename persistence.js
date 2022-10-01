@@ -15,6 +15,9 @@ function persistence(num) {
     let digits = (''+num).split('');
     let counter = 0
     let total = digits.reduce((previousValue,currentValue) => Number(currentValue) * Number(previousValue),1)
+    if(num > 9 && total == 0) {
+        counter = 1
+    }
     while (total > 9) {
         total = digits.reduce((previousValue,currentValue) => Number(currentValue) * Number(previousValue),1)
         digits = (''+total).split('')
